@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/sesioncompletiniciada" text="Salir" color="primary">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title>Lista de contactos</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="../assets/IconoJavi3.png" class="imgIcono" />
+        </ion-col>
+        <ion-col>
+            <ion-text class="WM">
+            <h1 >¡Memotec!</h1></ion-text>
+        </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-list *ngIf="cargado">
+        <ion-item *ngFor="let contacto of contactos">
+            <ion-label>{{ contacto.nombre }}</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

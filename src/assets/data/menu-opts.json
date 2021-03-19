@@ -1,0 +1,31 @@
+[{
+        "icon": "create",
+        "name": "Informacion Usuario",
+        "redirectTo": "/informacionusuario"
+    },
+    {
+        "icon": "document-attach",
+        "name": "Ingresar Información Personal",
+        "redirectTo": "/informacionagregadausuario"
+    },
+    {
+        "icon": "people",
+        "name": "Gestion Contactos",
+        "redirectTo": "/gestioncontactos/lista-contactos"
+    },
+    {
+        "icon": "people-circle",
+        "name": "Chat",
+        "redirectTo": "/chat"
+    },
+    {
+        "icon": "logo-firebase",
+        "name": "Agenda",
+        "redirectTo": "/agenda"
+    },
+    {
+        "icon": "globe",
+        "name": "GPS",
+        "redirectTo": "/gps"
+    }
+]

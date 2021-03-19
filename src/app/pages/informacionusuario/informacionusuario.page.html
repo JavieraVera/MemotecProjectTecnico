@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/sesioncompletiniciada" text="Salir" color="primary">
+            </ion-back-button>
+        </ion-buttons>
+
+        <ion-title>Información Usuario</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content *ngIf="cargado">
+
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="../assets/IconoJavi3.png" class="imgIcono" />
+        </ion-col>
+        <ion-col>
+            <ion-text class="WM">
+            <h1 >¡Memotec!</h1></ion-text>
+        </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-item style="padding-right: 10px;">
+        <ion-label>
+            Nombre:
+        </ion-label>
+        <ion-label slot="end">
+            {{usuario.nombre}}
+        </ion-label>
+    </ion-item>
+    <ion-item style="padding-right: 10px;">
+        <ion-label>
+            Apellido:
+        </ion-label>
+        <ion-label slot="end">
+            {{usuario.apellido}}
+        </ion-label>
+    </ion-item>
+    <ion-item style="padding-right: 10px;">
+        <ion-label>
+            Correo:
+        </ion-label>
+        <ion-label slot="end">
+            {{usuario.correo}}
+        </ion-label>
+    </ion-item>
+    <ion-item style="padding-right: 10px;">
+        <ion-label>
+            Nombre de usuario:
+        </ion-label>
+        <ion-label slot="end">
+            {{usuario.nombreUs}}
+        </ion-label>
+    </ion-item >
+    <!-- si no quieres mostrar la contraseña borra el ion-item de abajo o cambialos por ***** -->
+    <ion-item style="padding-right: 10px;">
+        <ion-label>
+            Contraseña
+        </ion-label>
+        <ion-label slot="end">
+            {{usuario.password}}
+        </ion-label>
+    </ion-item>
+
+
+</ion-content>

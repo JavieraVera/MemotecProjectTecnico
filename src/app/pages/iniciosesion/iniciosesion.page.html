@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+        <ion-back-button 
+        defaultHref="/"
+        text="Volver"
+        color="dark">
+        </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Iniciar Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="../assets/IconoJavi3.png" class="imgIcono" />
+      </ion-col>
+      <ion-col>
+        <ion-text class="WM">
+        <h1 >¡Memotec!</h1></ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <div style="
+    background-color: transparent;
+    box-shadow: 0px -5px 10px -5px rgba(0,0,0,.8);
+    border-top: 2px solid #f58051;
+    width: 50%;
+    background:transparent; 
+    padding: 32px;
+    border-radius: 10px;
+    margin-left: 90px;
+    ">
+
+    <svg 
+    width="1em" 
+    height="1em" 
+    style="zoom:7.0;"
+    color="rgba(255,255,255,0.4962359943977591) 2905%" 
+    viewBox="0 0 16 16" 
+    class="bi bi-person-square" 
+    fill="currentColor" 
+    xmlns="http://www.w3.org/2000/svg"
+    margin-left="5px"
+    >
+    <path 
+    fill-rule="evenodd" 
+    d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+  
+    <path 
+    fill-rule="evenodd" 
+    d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    </svg>
+  </div>
+
+  <ion-text>
+  <h1 style="color: whitesmoke; margin-left: 150px; font-size: 30px; font-style: italic;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,'';margin-top: -15px;">Login</h1>
+  </ion-text>
+
+  <form  style=
+  "
+  margin-left: 20px;
+  margin-top: 25px;
+  width: 300px;
+
+  ">
+
+    <ion-item>
+      <ion-input placeholder="Ingresar ID de Usuario" [(ngModel)]="nombre" name="nombre" required="required"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input placeholder="Ingresar Contraseña" type="password" [(ngModel)]="contrasena" name="contrasena" required="required"></ion-input>
+    </ion-item>
+
+    <ion-button color="dark" type="submit" expand="block" (click)="logForm()">Entrar</ion-button>
+
+  </form>
+
+ 
+
+
+
+  <ion-text style="color:whitesmoke; 
+  font-size: 50px;
+  font-style: italic;
+  background-color: transparent;
+  background: transparent;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,'';">
+    <h1 style="margin-left: 60px;">
+    Memory Technologies</h1>
+  </ion-text>
+  
+     
+  
+</ion-content>

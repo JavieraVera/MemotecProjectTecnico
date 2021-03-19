@@ -1,0 +1,115 @@
+<ion-header>
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/sesioncompletiniciada" text="Salir" color="primary">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title>Agenda & Calendario</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="../assets/IconoJavi3.png" class="imgIcono" />
+        </ion-col>
+        <ion-col>
+            <ion-text class="WM">
+            <h1 >¡Memotec!</h1></ion-text>
+        </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <!-- <ion-item>
+        <ion-label position="floating">titulo</ion-label>
+        <ion-input [(ngModel)]="event.title"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">descripcion</ion-label>
+        <ion-input [(ngModel)]="event.desc"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">inicio</ion-label>
+        <ion-input [(ngModel)]="event.startTime"> </ion-input>
+    </ion-item>
+    <ion-item *ngIf="cargado">
+        <ion-label>Contacto</ion-label>
+        <ion-select>
+            <ion-select-option *ngFor="let contacto of contactos"> {{contacto.nombre}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-button expand="block" (click)="addEvent()">añadir</ion-button> -->
+    <ion-card style="background-color: goldenrod;">
+        <ion-card-header tappable (click)="collapseCard = !collapseCard">
+            <ion-card-title>Nuevo Evento</ion-card-title>
+        </ion-card-header>
+        <ion-card-content *ngIf="!collapseCard">
+
+            <ion-item>
+                <ion-input type="text" placeholder="Título" [(ngModel)]="event.title"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" placeholder="Información" [(ngModel)]="event.desc"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Inicio</ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label>Termino</ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label>Todo el Día?</ion-label>
+                <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+            </ion-item>
+            <ion-button style="background-color: black;" fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''">Agendar Evento</ion-button>
+
+        </ion-card-content>
+    </ion-card>
+
+    <ion-row>
+        <!-- Change the displayed calendar mode -->
+        <ion-col size="4">
+            <ion-button style="background-color: brown;" expand="block" [color]="calendar.mode == 'month' ? 'Dark' : 'secondary'" (click)="changeMode('month')">Mes</ion-button>
+        </ion-col>
+        <ion-col size="4">
+            <ion-button expand="block" [color]="calendar.mode == 'week' ? 'Dark' : 'secondary'" (click)="changeMode('week')">Semana</ion-button>
+        </ion-col>
+        <ion-col size="4">
+            <ion-button  expand="block" [color]="calendar.mode == 'day' ? 'Dark' : 'secondary'" (click)="changeMode('day')">Día</ion-button>
+        </ion-col>
+
+        <!-- Move back one screen of the slides -->
+        <ion-col size="4" text-left>
+            <ion-button fill="clear" (click)="back()">
+                <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-col>
+
+        <ion-col size="4">
+            <ion-label>{{ viewTitle }}</ion-label>
+        </ion-col>
+
+        <!-- Move forward one screen of the slides -->
+        <ion-col size="4" text-right>
+            <ion-button fill="clear" (click)="next()">
+                <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-row>
+
+
+    <calendar 
+    [eventSource]="eventSource" 
+    [calendarMode]="calendar.mode" 
+    [currentDate]="calendar.currentDate" 
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)" 
+    (onTimeSelected)="onTimeSelected($event)" step="30">
+    </calendar>
+
+</ion-content>
